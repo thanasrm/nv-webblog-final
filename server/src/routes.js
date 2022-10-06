@@ -1,6 +1,7 @@
 const UserController = require('./controllers/UserController.js');
 const UserAuthenController = require('./controllers/UserAuthenController');
 const isAuthenController = require('./authen/isAuthenController')
+const MovieController = require('./controllers/MovieAuthenController')
 const BlogController = require('./controllers/BlogController');
 const Blog = require('./models/Blog.js');
 
