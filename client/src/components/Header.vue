@@ -2,7 +2,7 @@
 	<div>
 		<div class="nv-navbar">
 			<ul class="nav">
-				<li><router-link :to="{ name: 'blogs' }">JobJob</router-link></li>
+				<li><router-link :to="{ name: 'blogs' }">thana</router-link></li>
 				<li><router-link :to="{ name: 'users' }">Users</router-link></li>
 				<li><router-link :to="{ name: 'comments' }">Comments</router-link></li>
 				<li><router-link :to="{ name: 'login' }">Login</router-link></li>
