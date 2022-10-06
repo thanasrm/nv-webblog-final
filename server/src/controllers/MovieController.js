@@ -1,74 +1,74 @@
 const { Movie } = require('../models')
 module.exports = {
-    // get all blog
+    // get all Movie
     async index(req, res) {
         try {
-            const blogs = await Movie.findAll()
-            res.send(blogs)
+            const Movies = await Movie.findAll()
+            res.send(Movies)
         } catch (err) {
             res.status(500).send({
-                error: 'The blogs information was incorrect'
+                error: 'The Movies information was incorrect'
             })
         }
     },
-    // create blog
+    // create Movie
     async create(req, res) {
         console.log(JSON.stringify(req.body))
         try {
-            const blog = await Movie.create(req.body)
-            res.send(blog.toJSON())
+            const Movie = await Movie.create(req.body)
+            res.send(Movie.toJSON())
         } catch (err) {
             res.status(500).send({
-                error: 'Create blog incorrect'
+                error: 'Create Movie incorrect'
             })
         }
     },
-    // edit blog, suspend, active
+    // edit Movie, suspend, active
     async put(req, res) {
         try {
             await Movie.update(req.body, {
                 where: {
-                    id: req.params.blogId
+                    id: req.params.MovieId
                 }
             })
             res.send(req.body)
         } catch (err) {
             res.status(500).send({
-                error: 'Update blog incorrect'
+                error: 'Update Movie incorrect'
             })
         }
     },
     
-// delete blog
+// delete Movie
 async remove(req, res) {
         try {
-            const blog = await Movie.findOne({
+            const Movie = await Movie.findOne({
                 where: {
-                    id: req.params.blogId
+                    id: req.params.MovieId
                 }
             })
-            if (!blog) {
+            if (!Movie) {
                 return res.status(403).send({
-                    error: 'The blog information was incorrect'
+                    error: 'The Movie information was incorrect'
                 })
             }
-            await blog.destroy()
-            res.send(blog)
+            await Movie.destroy()
+            res.send(Movie)
         } catch (err) {
             res.status(500).send({
-                error: 'The blog information was incorrect'
+                error: 'The Movie information was incorrect'
             })
         }
     },
-    // get blog by id
+    // get Movie by id
     async show(req, res) {
         try {
-            const blog = await Movie.findByPk(req.params.blogId)
-            res.send(blog)
+            const Movie = await Movie.findByPk(req.params.MovieId)
+            res.send(Movie)
         } catch (err) {
             console.log(err)
             res.status(500).send({
-                error: 'The blog information was incorrect'
+                error: 'The Movie information was incorrect'
             })
         }
     }

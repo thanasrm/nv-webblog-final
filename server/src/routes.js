@@ -1,8 +1,9 @@
 const UserController = require('./controllers/UserController.js');
 const UserAuthenController = require('./controllers/UserAuthenController');
 const isAuthenController = require('./authen/isAuthenController')
-const MovieController = require('./controllers/MovieAuthenController')
+const MovieController = require('./controllers/MovieController')
 const BlogController = require('./controllers/BlogController');
+const Movie = require ('./models/Movie.js');
 const Blog = require('./models/Blog.js');
 
 let multer = require("multer")
@@ -26,13 +27,23 @@ module.exports = (app) => {
     app.put('/user/:userId', UserController.put)
     app.delete('/user/:userId', UserController.remove)
     app.get('/user/:userId', UserController.show)
+
     app.get('/users', isAuthenController, UserController.index)
+
     app.post('/login', UserAuthenController.login)
+
     app.post('/blog', BlogController.create)
     app.put('/blog/:blogId', BlogController.put)
     app.delete('/blog/:blogId', BlogController.remove)
     app.get('/blog/:blogId', BlogController.show)
     app.get('/blogs', BlogController.index)
+
+    app.post('Movie', MovieController.create)
+    app.put('/Movie/:MovieID', MovieController.put)
+    app.delete('/Movie/:MovieID', MovieController.remove)
+    app.get('/Movie/:MovirID',MovieController.show)
+    app.get('/Movie',MovieController.index)
+
     app.post('/upload', function (req, res) {
         upload(req, res, function (err) {
             // isUserAuthenicated,
