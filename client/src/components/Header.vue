@@ -2,8 +2,12 @@
 	<div>
 		<div class="nv-navbar">
 			<ul class="nav">
+<<<<<<< HEAD
 				<li><router-link :to="{ name: 'blogs' }">thana</router-link></li>
 				<li><router-link :to="{ name: 'blogs' }">Job</router-link></li>
+=======
+				<li><router-link :to="{ name: 'blogs' }">monthly movie</router-link></li>
+>>>>>>> 8b082fac252a13e334959bfbfcda6369ce12203f
 				<li><router-link :to="{ name: 'users' }">Users</router-link></li>
 				<li><router-link :to="{ name: 'comments' }">Comments</router-link></li>
 				<li><router-link :to="{ name: 'login' }">Login</router-link></li>
