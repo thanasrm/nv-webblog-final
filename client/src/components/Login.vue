@@ -7,7 +7,7 @@
           <h1><b>Admin Login</b></h1>
           <div style="width: 60%">
             <form v-on:submit.prevent="onLogin">
-              <div class="form-group font3" style="text-align: left">
+              <div class="form-group font3" style="text-align: ">
                 <label for="exampleInputEmail1"
                   ><span class="font2">E-mail</span></label
                 >
@@ -26,7 +26,7 @@
                   />
                 </div>
               </div>
-              <div class="form-group font3" style="text-align: left">
+              <div class="form-group font3" style="text-align: ">
                 <label for="exampleInputEmail1"
                   ><span class="font2">Password</span></label
                 >
@@ -52,7 +52,7 @@
                     required
                     type="submit"
                     class="btn btn-primary"
-                    style="width: 100%;"
+                    style="width: 50%;"
                   >
                     <i class="fas fa-key"></i> Login
                   </button>
@@ -61,7 +61,7 @@
                   <button
                     class="btn btn-danger"
                     type="reset"
-                    style="width: 100%"
+                    style="width: 50%"
                   >
                     <i class="fas fa-minus-circle"></i> clean 
                   </button>
@@ -139,7 +139,7 @@ export default {
   border-radius: 50px;
   margin-top: 100px;
   width: 40%;
-  background: #1d5ca3;
+  background: #3f79bd;
   padding: 30px;
 }
 .blog-tab {
