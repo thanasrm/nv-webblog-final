@@ -20,7 +20,7 @@
                   <input
                     required
                     type="email"
-                    class="form-control"
+                    class="form-control" 
                     placeholder="E-mail"
                     v-model="email"
                   />
