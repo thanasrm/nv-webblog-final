@@ -17,7 +17,7 @@
 		</div>
 	</div>
 </template>
-<script>
+<script>   
 export default {} ;
 </script>
 <style scoped>
@@ -54,3 +54,4 @@ export default {} ;
 	clear: left;
 }
 </style>
+     
