@@ -54,4 +54,4 @@ export default {} ;
 	clear: left;
 }
 </style>
-     
+  

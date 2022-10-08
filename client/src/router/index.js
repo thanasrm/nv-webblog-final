@@ -13,6 +13,11 @@ import BlogCreate from '@/components/Blogs/CreateBlog'
 import BlogEdit from '@/components/Blogs/EditBlog'
 import BlogShow from '@/components/Blogs/ShowBlog'
 
+import MovieIndex from '@/components/Movie/Index'
+import MovieCreate from '@/components/Movie/CreateMovie'
+import MovieEdit from '@/components/Movie/EditMovie'
+import MovieShow from '@/components/Movie/ShowMovie'
+
 import CommentIndex from '@/components/Comments/Index'
 
 import Upload from '@/components/Utils/Upload'
@@ -65,6 +70,25 @@ export default new Router({
       path: '/blog/:blogId',
       name: 'blog',
       component: BlogShow
+    },
+    {
+      path: '/Movie',
+      name: 'Movie',
+      component: MovieIndex
+    },
+    {
+      path: '/Movie/create',
+      name: 'Movie-create',
+      component: MovieCreate
+    },{
+      path: '/Movie/edit/:MovieId',
+      name: 'Movie-edit',
+      component: MovieEdit
+    },
+    {
+      path: '/Movie/:MovieId',
+      name: 'Movie',
+      component: MovieShow
     },
     {
       path: '/comments',
