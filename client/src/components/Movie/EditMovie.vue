@@ -75,7 +75,7 @@
 											<transition-group tag="ul" name="fade" class="pictures">
 												<li v-for="picture in pictures" v-bind:key="picture.id">
 													<img
-														style="margin-bottom: 5px"
+														style="margin-bottom: 5px" 
 														:src="BASE_URL + picture.name"
 														alt="picture image"
 													/>
@@ -87,7 +87,7 @@
 													>
 														Select thumbnail
 													</button>
-													<button
+									 				<button
 														type="button"
 														class="btn btn-danger btn-sm"
 														v-on:click.prevent="delFile(picture)"
