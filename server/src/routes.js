@@ -1,10 +1,12 @@
 const UserController = require('./controllers/UserController.js');
 const UserAuthenController = require('./controllers/UserAuthenController');
 const isAuthenController = require('./authen/isAuthenController')
-const MovieController = require('./controllers/MovieController')
 const BlogController = require('./controllers/BlogController');
-const Movie = require ('./models/Movie.js');
+const ProductController = require('./controllers/ProductController');
+const OrderController = require('./controllers/OrderController');
 const Blog = require('./models/Blog.js');
+const Product = require('./models/Product.js');
+const Order = require('./models/Order.js')
 
 let multer = require("multer")
 
@@ -31,19 +33,25 @@ module.exports = (app) => {
     app.get('/users', isAuthenController, UserController.index)
 
     app.post('/login', UserAuthenController.login)
-
+    
     app.post('/blog', BlogController.create)
     app.put('/blog/:blogId', BlogController.put)
     app.delete('/blog/:blogId', BlogController.remove)
     app.get('/blog/:blogId', BlogController.show)
     app.get('/blogs', BlogController.index)
+    
+    app.post('/product',ProductController.create)
+    app.put('/product/:productId', ProductController.put)
+    app.delete('/product/:productId', ProductController.remove)
+    app.get('/product/:productId',ProductController.show)
+    app.get('/products',ProductController.index)
 
-    app.post('Movie', MovieController.create)
-    app.put('/Movie/:MovieID', MovieController.put)
-    app.delete('/Movie/:MovieID', MovieController.remove)
-    app.get('/Movie/:MovirID',MovieController.show)
-    app.get('/Movie',MovieController.index)
-
+    app.post('/order', OrderController.create)
+    app.put('/order/:orderId', OrderController.put)
+    app.delete('/order/:orderId', OrderController.remove)
+    app.get('/order/:orderId', OrderController.show)
+    app.get('/orders', OrderController.index)
+    
     app.post('/upload', function (req, res) {
         upload(req, res, function (err) {
             // isUserAuthenicated,
@@ -53,6 +61,7 @@ module.exports = (app) => {
             res.end("File is uploaded")
         })
     })
+
     app.post('/upload/delete', async function (req, res) {
         try {
             const fs = require('fs');

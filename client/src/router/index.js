@@ -7,16 +7,17 @@ import UserCreate from '@/components/Users/CreateUser'
 import UserEdit from '@/components/Users/EditUser'
 import UserShow from '@/components/Users/ShowUser'
 import Login from '@/components/Login'
+import Homepage from '@/components/Homepage'
 
 import BlogIndex from '@/components/Blogs/Index'
 import BlogCreate from '@/components/Blogs/CreateBlog'
 import BlogEdit from '@/components/Blogs/EditBlog'
 import BlogShow from '@/components/Blogs/ShowBlog'
 
-import MovieIndex from '@/components/Movie/Index'
-import MovieCreate from '@/components/Movie/CreateMovie'
-import MovieEdit from '@/components/Movie/EditMovie'
-import MovieShow from '@/components/Movie/ShowMovie'
+import OrderIndex from '@/components/Orders/Index'
+import OrderCreate from '@/components/Orders/CreateOrder'
+import OrderEdit from '@/components/Orders/EditOrder'
+import OrderShow from '@/components/Orders/ShowOrder'
 
 import CommentIndex from '@/components/Comments/Index'
 
@@ -58,6 +59,11 @@ export default new Router({
       component: BlogIndex
     },
     {
+      path: '/homepage',
+      name: 'homepage',
+      component: Homepage
+    },
+    {
       path: '/blog/create',
       name: 'blog-create',
       component: BlogCreate
@@ -72,25 +78,6 @@ export default new Router({
       component: BlogShow
     },
     {
-      path: '/Movie',
-      name: 'Movie',
-      component: MovieIndex
-    },
-    {
-      path: '/Movie/create',
-      name: 'Movie-create',
-      component: MovieCreate
-    },{
-      path: '/Movie/edit/:MovieId',
-      name: 'Movie-edit',
-      component: MovieEdit
-    },
-    {
-      path: '/Movie/:MovieId',
-      name: 'Movie',
-      component: MovieShow
-    },
-    {
       path: '/comments',
       name: 'comments',
       component: CommentIndex
@@ -99,6 +86,26 @@ export default new Router({
       path: '/upload',
       name: 'upload',
       component: Upload
+    },
+    {
+      path: '/orders',
+      name: 'orders',
+      component: OrderIndex
+    },
+    {
+      path: '/order/create',
+      name: 'order-create',
+      component: OrderCreate
+    },
+    {
+      path: '/order/edit/:orderId',
+      name: 'order-edit',
+      component: OrderEdit
+    },
+    {
+      path: '/order/:orderId',
+      name: 'order',
+      component: OrderShow
     }
   ]
 })
