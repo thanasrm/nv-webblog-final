@@ -80,6 +80,7 @@
 <script>
 import AuthenService from "@/services/AuthenService";
 
+
 export default {
 	data() {
 		return {
@@ -147,4 +148,5 @@ export default {
 	background-color: #d3d3d3;
 	text-align: center;
 }
+
 </style>

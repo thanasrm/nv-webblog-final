@@ -126,21 +126,6 @@
 										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1">Status</label>
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="basic-addon1"
-												><i class="fas fa-server"></i
-											></span>
-										</div>
-										<select class="form-control" v-model="blog.status" required>
-											<option disabled value="">Select status</option>
-											<option value="Active">Active</option>
-											<option value="InActive">InActive</option>
-										</select>
-									</div>
-								</div>
 								<br />
 								<div class="row">
 									<div class="col">

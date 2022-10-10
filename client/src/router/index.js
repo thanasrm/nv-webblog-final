@@ -14,11 +14,6 @@ import BlogCreate from '@/components/Blogs/CreateBlog'
 import BlogEdit from '@/components/Blogs/EditBlog'
 import BlogShow from '@/components/Blogs/ShowBlog'
 
-import OrderIndex from '@/components/Orders/Index'
-import OrderCreate from '@/components/Orders/CreateOrder'
-import OrderEdit from '@/components/Orders/EditOrder'
-import OrderShow from '@/components/Orders/ShowOrder'
-
 import CommentIndex from '@/components/Comments/Index'
 
 import Upload from '@/components/Utils/Upload'
@@ -82,30 +77,7 @@ export default new Router({
       name: 'comments',
       component: CommentIndex
     },
-    {
-      path: '/upload',
-      name: 'upload',
-      component: Upload
-    },
-    {
-      path: '/orders',
-      name: 'orders',
-      component: OrderIndex
-    },
-    {
-      path: '/order/create',
-      name: 'order-create',
-      component: OrderCreate
-    },
-    {
-      path: '/order/edit/:orderId',
-      name: 'order-edit',
-      component: OrderEdit
-    },
-    {
-      path: '/order/:orderId',
-      name: 'order',
-      component: OrderShow
-    }
+
+    
   ]
 })

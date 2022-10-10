@@ -11,7 +11,7 @@
 						<br />
 						<span class="font2">
 							<form v-on:submit.prevent="editBlog">
-								<label for="exampleInputEmail1">Product Name</label>
+								<label for="exampleInputEmail1">Name Movie</label>
 								<div class="input-group mb-3">
 									<div class="input-group-prepend">
 										<span class="input-group-text" id="basic-addon1"
@@ -27,7 +27,7 @@
 
 								<br />
 								<div class="form-group">
-									<label for="exampleInputEmail1">Product Price</label>
+									<label for="exampleInputEmail1">Details Movie</label>
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">
 											<span class="input-group-text" id="basic-addon1"
@@ -103,7 +103,7 @@
 
 								<br />
 								<div class="form-group">
-									<label for="exampleInputEmail1">Category</label>
+									<label for="exampleInputEmail1">Type Movie</label>
 									<div class="input-group mb-3">
 										<select
 											class="form-control"
@@ -111,30 +111,16 @@
 											required
 										>
 											<option disabled value="">
-												Please select a category
+												Type
 											</option>
-											<option value="Tea">Tea</option>
-											<option value="Coffee">Coffee</option>
-											<option value="Smoothie">Smoothie</option>
-											<option value="Soda">Soda</option>
+											<option value="Action/Adventure">Action/Adventure</option>
+											<option value="Mystery/Crime Film">Mystery/Crime Film</option>
+											<option value="Musical/Children and Family">Musical/Children and Family</option>
+											<option value="Sci-fi/Adventure ">Sci-fi/Adventure </option>
 										</select> 
 									</div>
 								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1">Status</label>
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="basic-addon1"
-												><i class="fas fa-server"></i
-											></span>
-										</div>
-										<select class="form-control" v-model="blog.status" required>
-											<option disabled value="">Select status</option>
-											<option value="Active">Active</option>
-											<option value="InActive">InActive</option>
-										</select>
-									</div>
-								</div>
+								
 								<div class="row">
 									<div class="col">
 										<button
