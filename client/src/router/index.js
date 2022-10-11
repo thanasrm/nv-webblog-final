@@ -7,6 +7,7 @@ import UserCreate from '@/components/Users/CreateUser'
 import UserEdit from '@/components/Users/EditUser'
 import UserShow from '@/components/Users/ShowUser'
 import Login from '@/components/Login'
+import Homepage from '@/components/Homepage'
 
 import BlogIndex from '@/components/Blogs/Index'
 import BlogCreate from '@/components/Blogs/CreateBlog'
@@ -53,6 +54,11 @@ export default new Router({
       component: BlogIndex
     },
     {
+      path: '/homepage',
+      name: 'homepage',
+      component: Homepage
+    },
+    {
       path: '/blog/create',
       name: 'blog-create',
       component: BlogCreate
@@ -71,10 +77,7 @@ export default new Router({
       name: 'comments',
       component: CommentIndex
     },
-    {
-      path: '/upload',
-      name: 'upload',
-      component: Upload
-    }
+
+    
   ]
 })

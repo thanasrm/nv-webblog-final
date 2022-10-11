@@ -1,51 +1,67 @@
 <template>
-	<div>
-		<div class="nv-navbar">
-			<ul class="nav">
-				<li><router-link :to="{ name: 'blogs' }">Blogs</router-link></li>
-				<li><router-link :to="{ name: 'users' }">Users</router-link></li>
-				<li><router-link :to="{ name: 'comments' }">Comments</router-link></li>
-				<li><router-link :to="{ name: 'login' }">Login</router-link></li>
-				<li><router-link :to="{ name: 'blogs' }">Blogs</router-link></li>
-			</ul>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">
+				<img style="color: white"
+					src="../assets/mm.png"
+					width="30"
+					height="30"
+					class="d-inline-block align-top"
+					alt=""
+				/>
+				<span class="font1" style="color: white">&nbsp;<b>Monthly Movie</b></span>
+				<span class="font1">&nbsp;|&nbsp;</span>
+				<span class="font1"><router-link :to="{ name: 'homepage' }"><span style="color: white"><b> Movie</b></span></router-link></span>
+				<span class="font1">&nbsp;|&nbsp;</span>
+				<span class="font1"><router-link :to="{ name: 'blogs' }"><span style="color: white"><b>Add Movie</b></span></router-link></span>
+				<span class="font1">&nbsp;|&nbsp;</span>
+				<span v-on:click.prevent="logout" style="color: white"
+					><i class="fas fa-sign-in-alt"></i> Logout</span
+				>
+			</a>
+			<!-- <ul class="navbar-brand">
+        <li><router-link :to="{ name: 'blogs' }">Blog</router-link></li>
+        <li><router-link :to="{ name: 'users' }">Order</router-link></li>
+        <li><router-link :to="{ name: 'comments' }">Product</router-link></li>
+        <li><router-link :to="{ name: 'login' }">Login</router-link></li>
+        <li><router-link :to="{ name: 'blogs' }">User</router-link></li>
+      </ul> -->
 			<div class="clearfix" />
-		</div>
+		</nav>
 	</div>
 </template>
 <script>
-export default {};
+import { mapState } from "vuex";
+import AuthenService from "@/services/AuthenService";
+
+export default {
+	data() {
+		return {};
+	},
+	computed: {
+		...mapState(["isUserLoggedIn", "user"]),
+	},
+	methods: {
+		navigateTo(route) {
+			this.$router.push(route);
+		},
+		logout() {
+			this.$store.dispatch("setToken", null);
+			this.$store.dispatch("setUser", null);
+			this.$router.push({
+				name: "login",
+			});
+		},
+	},
+};
 </script>
 <style scoped>
-.nv-navbar {
-	background-color: palegoldenrod;
-	width: 100%;
-	padding: 10px 0px 10px 0px;
+.bg-light {
+	background-color: #5396d4 !important;
+	color: #fff !important;
 }
-.nv-navbar .nav {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	float: left;
-}
-.nv-navbar .nav li {
-	float: left;
-}
-.nv-navbar .nav li a {
-	padding: 10px;
-	text-decoration: none;
-	color: grey;
-	font-weight: bold;
-}
-.nv-navbar .nav li a:hover {
-	padding: 10px;
-	text-decoration: none;
-	color: darkslategrey;
-}
-.nv-navbar .nav li a.router-link-active {
-	background-color: gold;
-	color: darkslategrey;
-}
-.clearfix {
-	clear: left;
+
+.container-fluid {
+	margin-top: -50px;
 }
 </style>

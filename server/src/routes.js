@@ -2,7 +2,9 @@ const UserController = require('./controllers/UserController.js');
 const UserAuthenController = require('./controllers/UserAuthenController');
 const isAuthenController = require('./authen/isAuthenController')
 const BlogController = require('./controllers/BlogController');
+const MovieController = require('./controllers/MovieController')
 const Blog = require('./models/Blog.js');
+const Movie = require('./models/Movie.js');
 
 let multer = require("multer")
 
@@ -25,13 +27,17 @@ module.exports = (app) => {
     app.put('/user/:userId', UserController.put)
     app.delete('/user/:userId', UserController.remove)
     app.get('/user/:userId', UserController.show)
+
     app.get('/users', isAuthenController, UserController.index)
+
     app.post('/login', UserAuthenController.login)
+    
     app.post('/blog', BlogController.create)
     app.put('/blog/:blogId', BlogController.put)
     app.delete('/blog/:blogId', BlogController.remove)
     app.get('/blog/:blogId', BlogController.show)
     app.get('/blogs', BlogController.index)
+
     app.post('/upload', function (req, res) {
         upload(req, res, function (err) {
             // isUserAuthenicated,
@@ -41,6 +47,7 @@ module.exports = (app) => {
             res.end("File is uploaded")
         })
     })
+
     app.post('/upload/delete', async function (req, res) {
         try {
             const fs = require('fs');
